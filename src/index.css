@@ -1,0 +1,26 @@
+/* index.css 또는 루트 파일에 포함되는 css 파일 */
+/* 특이하게도 @import 가 아닌 @tailwind 키워드로 모듈을 불러옵니다! */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer utilities {
+  .max-width-450 {
+    max-width: 450px;
+  }
+
+  .max-width-630 {
+    max-width: 630px;
+  }
+}
+
