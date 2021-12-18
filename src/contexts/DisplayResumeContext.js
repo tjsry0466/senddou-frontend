@@ -57,6 +57,13 @@ function resumeReducer(state, action) {
               };
         }),
       };
+    case 'SET_DATA':
+      const keys = Object.keys(action.data);
+      state.items = state.items.map(item => {
+          return keys.includes(item.type)? {...item, data: action.data[item.type]}:{ ...item, data: null };
+        },
+      );
+      return state;
     default:
       throw new Error(`Unhandled action type: ${action.type}`);
   }

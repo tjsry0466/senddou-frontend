@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { WidthProvider, Responsive } from 'react-grid-layout';
 import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
@@ -19,10 +19,8 @@ function Display(props) {
   const resume = useResumeState();
 
   const { design: pickDesign, resume: pickResume } = usePickState();
-  console.log(pickResume.id + '번 이력서가 선택됬다.!');
-  console.log(resume);
-  console.log('에 다음껄 넣어야한다.');
-  console.log(items.items);
+  const data = resume.filter(item => item.id === pickResume.id)?.[0]['data'];
+  dispatch({type:'SET_DATA', data:data});
   const { i, design_type, name } = pickDesign;
   const pickDispatch = usePickDispatch();
   const [, setLayout] = useState(null);
@@ -130,10 +128,10 @@ function Display(props) {
 
   return (
     <div
-      className="w-3/5 mx-2 rounded-xl ring-2 ring-blue-300 ring-inset focus:outline-none"
+      className="ml-8 w-3/4 rounded-xl ring-2 ring-blue-300 ring-inset bg-white focus:outline-none min-h-screen"
       onClick={onNeverPick}
     >
-      <button onClick={onAddItem}>Add Item</button>
+      {/*<button onClick={onAddItem}>Add Item</button>*/}
       <ResponsiveReactGridLayout
         onLayoutChange={onLayoutChange}
         onBreakpointChange={onBreakpointChange}
