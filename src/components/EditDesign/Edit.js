@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { Tab } from '@headlessui/react';
 import { usePickDispatch, usePickState } from '../../contexts/PickContext';
 import { useDisplayResumeDispatch } from '../../contexts/DisplayResumeContext';
-import { useResumeState } from '../../contexts/ResumeContext';
+import { useResumeDispatch, useResumeState } from '../../contexts/ResumeContext';
 import { PickTemplate } from '../../templates/PickTemplate';
 import { useScroll } from '../../hooks/useScroll';
+import * as axios from 'axios';
+import useAsync from '../../hooks/useAsync';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -19,54 +21,53 @@ function Resume({ company, title }) {
   );
 }
 
+async function getResumeDesign() {
+  const response = await axios.get(
+    'http://localhost:3001/resume'
+  );
+  return response.data;
+}
+
+async function getResumeContent() {
+  const response = await axios.get(
+    'http://localhost:3001/users_1_resume'
+  );
+  return response.data;
+}
+
 function Edit() {
-  const [designs] = useState([
-    {
-      id: 1,
-      type: 'intro',
-      name: 'intro',
-    },
-    {
-      id: 2,
-      type: 'project',
-      name: 'project',
-    },
-    {
-      id: 3,
-      type: 'military',
-      name: 'military',
-    },
-    {
-      id: 4,
-      type: 'career',
-      name: 'career',
-    },
-    {
-      id: 5,
-      type: 'career',
-      name: 'career1',
-    },
-    {
-      id: 5,
-      type: 'intro',
-      name: 'introduceMe',
-    },
-  ]);
+  const [state, refetch] = useAsync(getResumeDesign, [], true);
+  const { loading, data: designs, error } = state; // state.data 를 users 키워드로 조회
+
+  // const [resumeContentState, resumeContentRefetch] = useAsync(getResumeContent, [], true);
+  // const { resumeContentLoading, data: resumeContent, resumeContentError } = resumeContentState; // state.data 를 users 키워드로 조회
+
   const resumes = useResumeState();
+  // const resumesDispatch = useResumeDispatch();
   const { design, resume } = usePickState();
   const { i, name, design_type } = design;
   const pickDispatch = usePickDispatch();
   const displayResumeDispatch = useDisplayResumeDispatch();
   const { scrollY } = useScroll();
 
+  // useEffect(() => {
+  //   resumesDispatch({type:'SET_ALL_DATA',data:resumeContent});
+  // },[resumesDispatch, resumeContentState]);
+
+  if (loading) return <div>로딩중..</div>;
+  if (error) return <div>에러가 발생했습니다</div>;
+  if (!designs) return <button onClick={refetch}>불러오기</button>;
+
+  // if (resumeContentLoading) return <div>로딩중..</div>;
+  // if (resumeContentError) return <div>에러가 발생했습니다</div>;
+  // if (!resumeContent) return <button onClick={refetch}>불러오기</button>;
+
   const isFixed = () => {
-    console.log(scrollY)
-    console.log(scrollY > 88 ? true : false)
     return scrollY > 95 ? true : false;
   };
 
   const getDesignByType = () => {
-    return designs.filter((i) => i.type === design_type);
+    return designs?.filter((i) => i.type === design_type);
   };
 
   const pickDesignHandle = (pickedName, pickedType) => {
@@ -134,6 +135,7 @@ function Edit() {
                           onClick={() => pickDesignHandle(post.name, post.type)}
                         >
                           <PickTemplate
+                            key={post.id}
                             type={post.type}
                             name={post.name}
                             data={post.data}

@@ -2,6 +2,10 @@ import React, { useCallback } from 'react';
 
 function IntroduceMe({ data, display }) {
 
+  const createContent = useCallback((item) => {
+    return item.map(el => <div className='text-lg' key={item.id}>{el}</div>);
+  }, []);
+
   const createElement = useCallback((item, display) => {
     return item.map(el =>
       (<div key={el.id}>
@@ -9,11 +13,7 @@ function IntroduceMe({ data, display }) {
         {createContent(el.content)}
       </div>),
     );
-  });
-
-  const createContent = useCallback((item) => {
-    return item.map(el => <div className='text-lg'>{el}</div>);
-  });
+  }, [createContent]);
 
   return (
     data && <div className='h-full'>
