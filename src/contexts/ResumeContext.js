@@ -12,7 +12,14 @@ const initialResumes = [
     company: 'apple',
     title: '애플 지원 이력서 입니다.',
     data: {
-      intro: '안녕하세요',
+      intro: [{
+        'title': '무엇이든지 해결하고자 하는 마음가짐',
+        'content': ['앞에 놓여진 문제는 어떤 방법으로든 해결하고자 하는 마음가짐을 가지고 있습니다. 어떠한 문제에 대해서 다양한 시각으로 관찰하여 좀더 나은 방법으로 해결할 수 있을지 고민합니다.'],
+      },
+        {
+          'title': '무엇이든지 해결하고자 하는 마음가짐2',
+          'content': ['앞에 놓여진 문제는 어떤 방법으로든 해결하고자 '],
+        }],
       career: '캐리어입니다.',
     },
   },
@@ -21,13 +28,19 @@ const initialResumes = [
     company: 'google',
     title: '구글 지원 이력서 입니다.',
     data: {
-      intro: '반갑습니다.',
+      intro: [{
+        'title': "무엇이든지 해결하고자 하는 마음가짐",
+        "content": ["뚜루뚜 빠라빠라 어떠한 문제에 대해서 다양한 시각으로 관찰하여 좀더 나은 방법으로 해결할 수 있을지 고민합니다."]
+      }],
     },
   },
 ];
 
 function resumeReducer(state, action) {
   switch (action.type) {
+    case 'SET_ALL_DATA':
+      console.log(state, action);
+      return action.data;
     case 'CREATE':
       return { items: state.items.concat(action.item) };
     case 'CHANGE':
