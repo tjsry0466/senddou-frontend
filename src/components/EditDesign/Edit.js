@@ -4,6 +4,7 @@ import { usePickDispatch, usePickState } from '../../contexts/PickContext';
 import { useDisplayResumeDispatch } from '../../contexts/DisplayResumeContext';
 import { useResumeState } from '../../contexts/ResumeContext';
 import { PickTemplate } from '../../templates/PickTemplate';
+import { useScroll } from '../../hooks/useScroll';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -46,67 +47,23 @@ function Edit() {
       name: 'career1',
     },
     {
-      id: 6,
-      type: 'career',
-      name: 'career1',
+      id: 5,
+      type: 'intro',
+      name: 'introduceMe',
     },
-    {
-      id: 7,
-      type: 'career',
-      name: 'career1',
-    },
-    {
-      id: 8,
-      type: 'career',
-      name: 'career1',
-    },
-    {
-      id: 9,
-      type: 'career',
-      name: 'career1',
-    },{
-      id: 10,
-      type: 'career',
-      name: 'career1',
-    },
-    {
-      id: 11,
-      type: 'career',
-      name: 'career1',
-    },
-    {
-      id: 12,
-      type: 'career',
-      name: 'career1',
-    },
-    {
-      id: 13,
-      type: 'career',
-      name: 'career1',
-    },
-    {
-      id: 14,
-      type: 'career',
-      name: 'career1',
-    },
-    {
-      id: 15,
-      type: 'career',
-      name: 'career1',
-    },
-    {
-      id: 16,
-      type: 'career',
-      name: 'career1',
-    },
-
   ]);
   const resumes = useResumeState();
   const { design, resume } = usePickState();
   const { i, name, design_type } = design;
   const pickDispatch = usePickDispatch();
   const displayResumeDispatch = useDisplayResumeDispatch();
-  const [scroll, setScroll] = useState(false);
+  const { scrollY } = useScroll();
+
+  const isFixed = () => {
+    console.log(scrollY)
+    console.log(scrollY > 88 ? true : false)
+    return scrollY > 95 ? true : false;
+  };
 
   const getDesignByType = () => {
     return designs.filter((i) => i.type === design_type);
@@ -133,11 +90,11 @@ function Edit() {
 
   return (
     <>
-      <div className={`w-1/4 ${scroll ? 'block':'hidden'}`}></div>
-      <div className={`w-1/4 bg-blue-200 rounded-xl shadow ${scroll ? 'fixed':'block'}`}>
+      <div className={`w-1/4 ${isFixed() ? 'block':'hidden'}`}></div>
+      <div className={`w-1/4 bg-blue-200 rounded-xl shadow ${isFixed() ? 'fixed top-2 left-2':''}`}>
         <Tab.Group>
           <Tab.List className='flex flex-1 p-2 bg-blue-900/20 rounded-xl'>
-            {['이력서', '디자인'].map((category) => (
+            {['디자인', '이력서'].map((category) => (
               <Tab
                 key={category}
                 className={({ selected }) =>
@@ -154,7 +111,7 @@ function Edit() {
               </Tab>
             ))}
           </Tab.List>
-          <Tab.Panels as='nav' className='m-1'>
+          <Tab.Panels as='nav' className="m-1">
             {Object.values([designs, resumes]).map((posts, idx) => (
               <Tab.Panel
                 key={idx}
@@ -164,14 +121,14 @@ function Edit() {
                 )}
               >
                 <div
-                  className='flex flex-wrap min-h-screen content-start overflow-y-scroll'
+                  className={`grid grid-cols-${idx ===0 ? '2' : '1'} gap-2 min-h-screen content-start overflow-auto`}
                 >
                   {idx === 0 &&
                     (getDesignByType().length !== 0 ? (
                       getDesignByType().map((post) => (
                         <div
                           key={post.id}
-                          className={`w-1/2 h-40 ring-4 ring-blue-300 rounded-lx ring-inset shadow-lg p-4 ${
+                          className={`w-full h-40 ring-4 ring-blue-300 rounded-lx ring-inset shadow-lg p-4 rounded-xl shadow-lg ${
                             post.name === name && 'ring-blue-600'
                           }`}
                           onClick={() => pickDesignHandle(post.name, post.type)}
@@ -179,7 +136,7 @@ function Edit() {
                           <PickTemplate
                             type={post.type}
                             name={post.name}
-                            data={'hello'}
+                            data={post.data}
                           />
                         </div>
                       ))
@@ -191,7 +148,7 @@ function Edit() {
                     posts.map((post) => (
                       <div
                         key={post.id}
-                        className={`w-full ring-4 ring-blue-300 ring-inset shadow-2xl p-2 mb-2 ${
+                        className={`w-full ring-4 ring-blue-300 ring-inset shadow-2xl p-2 mb-2 rounded-xl ${
                           post.id === resume.id && 'ring-blue-600'
                         }`}
                         onClick={() => pickResumeHandle(String(post.id))}

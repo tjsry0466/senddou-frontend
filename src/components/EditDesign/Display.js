@@ -30,6 +30,7 @@ function Display(props) {
   });
 
   const getDisplayData = () => {
+    console.log(items)
     return items;
   };
 
@@ -112,7 +113,7 @@ function Display(props) {
             className="drag-area h-full w-full"
             onClick={(e) => e.stopPropagation()}
           >
-            <PickTemplate type={el.type} name={el.name} data={el.data} />
+            <PickTemplate type={el.type} name={el.name} data={el.data} display/>
           </div>
           <span
             className="remove hidden absolute right-2 top-0 cursor-pointer group-hover:block"
@@ -128,7 +129,7 @@ function Display(props) {
 
   return (
     <div
-      className="ml-8 w-3/4 rounded-xl ring-2 ring-blue-300 ring-inset bg-white focus:outline-none min-h-screen"
+      className="ml-8 p-4 w-3/4 rounded-xl ring-2 ring-blue-300 ring-inset bg-white focus:outline-none min-h-screen"
       onClick={onNeverPick}
     >
       {/*<button onClick={onAddItem}>Add Item</button>*/}

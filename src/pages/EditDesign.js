@@ -16,7 +16,7 @@ function EditDesign() {
         <ResumeProvider>
           <PickProvider>
             <DisplayResumeProvider>
-              <div className='flex p-8'>
+              <div className='flex pt-4 px-2'>
                 <Edit />
                 <Display />
               </div>
