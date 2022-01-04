@@ -9,13 +9,19 @@ module.exports = {
       '1/2': '50%',
       '3/4': '75%',
     },
+
   },
   variants: {
     extend: {
       display: ['group-hover'],
       borderStyle: ['responsive', 'hover'],
       borderWidth: ['responsive', 'hover'],
+
     },
   },
-  plugins: [],
+  plugins: [
+
+  ],
+
+
 };
