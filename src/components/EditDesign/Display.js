@@ -26,7 +26,7 @@ async function getResumeContent() {
     'http://localhost:3001/users_1_resume'
   );
   return response.data;
-}
+}//////////
 
 function Display(props) {
   const [displayResumeState, displayResumeRefetch] = useAsync(getDisplayResume, [], true);
