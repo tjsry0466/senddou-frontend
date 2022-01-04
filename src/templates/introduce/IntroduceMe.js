@@ -6,7 +6,7 @@ function IntroduceMe({ data, display }) {
     return item.map(el => <div className='text-lg' key={item.id}>{el}</div>);
   }, []);
 
-  const createElement = useCallback((item, display) => {
+  const createElement = useCallback((item) => {
     return item.map(el =>
       (<div key={el.id}>
         <div className='font-bold text-2xl mt-6'>{el.title}</div>

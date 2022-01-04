@@ -9,13 +9,14 @@ import {
 } from '../../contexts/DisplayResumeContext';
 import { usePickDispatch, usePickState } from '../../contexts/PickContext';
 import { PickTemplate } from '../../templates/PickTemplate';
-import { useResumeState } from '../../contexts/ResumeContext';
+import { useResumeDispatch, useResumeState } from '../../contexts/ResumeContext';
 import * as axios from 'axios';
+import useAsync from '../../hooks/useAsync';
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
-async function getResumeDesign() {
+async function getDisplayResume() {
   const response = await axios.get(
-    'http://localhost:3001/resume'
+    'http://localhost:3001/display_resume'
   );
   return response.data;
 }
@@ -28,6 +29,11 @@ async function getResumeContent() {
 }
 
 function Display(props) {
+  const [displayResumeState, displayResumeRefetch] = useAsync(getDisplayResume, [], true);
+  const [resumeState, resumeRefetch] = useAsync(getResumeContent, [], true);
+  const { loading: displayResumeLoading, data: displayResume, error: displayResumeError } = displayResumeState;
+  const { loading: resumeLoading, data: resumes, error: resumeError } = resumeState;
+
   const items = useDisplayResumeState();
   const resume = useResumeState();
 
@@ -39,6 +45,14 @@ function Display(props) {
     cols: 0,
   });
   const dispatch = useDisplayResumeDispatch();
+  const resumeDispatch = useResumeDispatch();
+  if (!items.items.length && displayResume){
+    dispatch({ type: 'SET_ALL_DATA', data: displayResume });
+  }
+  if (!resume.length && resumes){
+    resumeDispatch({ type: 'SET_ALL_DATA', data: resumes });
+  }
+
   const pickDispatch = usePickDispatch();
   // const nextId = useDisplayResumeNextId();
   const data = resume.filter(item => item.id === pickResume.id)?.[0];
