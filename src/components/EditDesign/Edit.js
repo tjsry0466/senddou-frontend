@@ -37,30 +37,18 @@ async function getResumeContent() {
 
 function Edit() {
   const [state, refetch] = useAsync(getResumeDesign, [], true);
-  const { loading, data: designs, error } = state; // state.data 를 users 키워드로 조회
-
-  // const [resumeContentState, resumeContentRefetch] = useAsync(getResumeContent, [], true);
-  // const { resumeContentLoading, data: resumeContent, resumeContentError } = resumeContentState; // state.data 를 users 키워드로 조회
-
-  const resumes = useResumeState();
-  // const resumesDispatch = useResumeDispatch();
+  const [resumeState, resumeRefetch] = useAsync(getResumeContent, [], true);
   const { design, resume } = usePickState();
+  const { loading, data: designs, error } = state;
+  const { loading: resumeLoading, data: resumes, error: resumeError } = resumeState;
   const { i, name, design_type } = design;
   const pickDispatch = usePickDispatch();
   const displayResumeDispatch = useDisplayResumeDispatch();
   const { scrollY } = useScroll();
 
-  // useEffect(() => {
-  //   resumesDispatch({type:'SET_ALL_DATA',data:resumeContent});
-  // },[resumesDispatch, resumeContentState]);
-
-  if (loading) return <div>로딩중..</div>;
-  if (error) return <div>에러가 발생했습니다</div>;
-  if (!designs) return <button onClick={refetch}>불러오기</button>;
-
-  // if (resumeContentLoading) return <div>로딩중..</div>;
-  // if (resumeContentError) return <div>에러가 발생했습니다</div>;
-  // if (!resumeContent) return <button onClick={refetch}>불러오기</button>;
+  if (loading | resumeLoading) return <div>로딩중..</div>;
+  if (error | resumeError) return <div>에러가 발생했습니다</div>;
+  if (!designs | !resumes) return <button onClick={refetch}>불러오기</button>;
 
   const isFixed = () => {
     return scrollY > 95 ? true : false;

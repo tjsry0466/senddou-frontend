@@ -9,10 +9,31 @@ import {
 } from '../../contexts/DisplayResumeContext';
 import { usePickDispatch, usePickState } from '../../contexts/PickContext';
 import { PickTemplate } from '../../templates/PickTemplate';
-import { useResumeState } from '../../contexts/ResumeContext';
+import { useResumeDispatch, useResumeState } from '../../contexts/ResumeContext';
+import * as axios from 'axios';
+import useAsync from '../../hooks/useAsync';
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
+async function getDisplayResume() {
+  const response = await axios.get(
+    'http://localhost:3001/display_resume'
+  );
+  return response.data;
+}
+
+async function getResumeContent() {
+  const response = await axios.get(
+    'http://localhost:3001/users_1_resume'
+  );
+  return response.data;
+}
+
 function Display(props) {
+  const [displayResumeState, displayResumeRefetch] = useAsync(getDisplayResume, [], true);
+  const [resumeState, resumeRefetch] = useAsync(getResumeContent, [], true);
+  const { loading: displayResumeLoading, data: displayResume, error: displayResumeError } = displayResumeState;
+  const { loading: resumeLoading, data: resumes, error: resumeError } = resumeState;
+
   const items = useDisplayResumeState();
   const resume = useResumeState();
 
@@ -24,12 +45,21 @@ function Display(props) {
     cols: 0,
   });
   const dispatch = useDisplayResumeDispatch();
+  const resumeDispatch = useResumeDispatch();
+  if (!items.items.length && displayResume){
+    dispatch({ type: 'SET_ALL_DATA', data: displayResume });
+  }
+  if (!resume.length && resumes){
+    resumeDispatch({ type: 'SET_ALL_DATA', data: resumes });
+  }
+
   const pickDispatch = usePickDispatch();
   // const nextId = useDisplayResumeNextId();
+  const data = resume.filter(item => item.id === pickResume.id)?.[0];
+  if (data) {
+    dispatch({ type: 'SET_DATA', data: data['data'] });
+  }
 
-  // TODO 흠.. 이부분 문제가 있음.. useEffect를 써야 오류가 안나는데 쓰면 다른 기능이 동작을 안함.
-  const data = resume.filter(item => item.id === pickResume.id)?.[0]['data'];
-  dispatch({ type: 'SET_DATA', data: data });
 
   const getDisplayData = useCallback(() => {
     return items;
