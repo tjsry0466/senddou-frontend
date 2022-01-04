@@ -4,7 +4,6 @@ const initialPick = {
   design: { i: '', design_type: '', name: '' },
   resume: { id: '0' },
 };
-
 function pickReducer(state, action) {
   switch (action.type) {
     case 'SET_DESIGN':
