@@ -24,7 +24,7 @@ export default class SimpleSlider extends Component {
                     </div>
                     <div >
                         <img className="w-50px h-55px px-6" src="img/이력서 (2).png" alt="이력서 (2).png"/>
-                    </div>
+                    </div>yarn global -g json-server
                     <div>
                         <img className="w-50px h-55px px-6" src="img/이력서 (3).png" alt="이력서 (3).png"/>
                     </div>
