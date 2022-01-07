@@ -1,0 +1,104 @@
+{
+  "resume": [
+    {
+      "id": "1",
+      "type": "intro",
+      "name": "intro"
+    },
+    {
+      "id": "2",
+      "type": "project",
+      "name": "project"
+    },
+    {
+      "id": "3",
+      "type": "military",
+      "name": "military"
+    },
+    {
+      "id": "4",
+      "type": "career",
+      "name": "career"
+    },
+    {
+      "id": "5",
+      "type": "career",
+      "name": "career1"
+    },
+    {
+      "id": "6",
+      "type": "intro",
+      "name": "introduceMe"
+    }
+  ],
+  "users_1_resume": [
+    {
+      "id": "1",
+      "company": "apple",
+      "title": "애플 지원 이력서 입니다.",
+      "data": {
+        "intro": [{
+          "title": "무엇이든지 해결하고자 하는 마음가짐",
+          "content": ["앞에 놓여진 문제는 어떤 방법으로든 해결하고자 하는 마음가짐을 가지고 있습니다. 어떠한 문제에 대해서 다양한 시각으로 관찰하여 좀더 나은 방법으로 해결할 수 있을지 고민합니다."]
+        },
+          {
+            "title": "무엇이든지 해결하고자 하는 마음가짐2",
+            "content": ["앞에 놓여진 문제는 어떤 방법으로든 해결하고자 "]
+          }],
+        "career": "캐리어입니다."
+      }
+    },
+    {
+      "id": "2",
+      "company": "google",
+      "title": "구글 지원 이력서 입니다.",
+      "data": {
+        "intro": [{
+          "title": "무엇이든지 해결하고자 하는 마음가짐",
+          "content": ["뚜루뚜 빠라빠라 어떠한 문제에 대해서 다양한 시각으로 관찰하여 좀더 나은 방법으로 해결할 수 있을지 고민합니다."]
+        }]
+      }
+    }
+  ],
+  "display_resume": {
+    "items": [
+      {
+        "type": "intro",
+        "name": "intro",
+        "i": "0",
+        "x": 0,
+        "y": 0,
+        "w": 2,
+        "h": 2
+      },
+      {
+        "type": "career",
+        "name": "career",
+        "i": "1",
+        "x": 2,
+        "y": 0,
+        "w": 2,
+        "h": 2
+      },
+      {
+        "type": "military",
+        "name": "military",
+        "i": "2",
+        "x": 4,
+        "y": 0,
+        "w": 2,
+        "h": 2
+      },
+      {
+        "type": "project",
+        "name": "project",
+        "i": "3",
+        "x": 6,
+        "y": 0,
+        "w": 2,
+        "h": 2
+      }
+    ]
+  }
+}
+

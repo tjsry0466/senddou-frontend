@@ -1,33 +1,10 @@
 import React, { useReducer, createContext, useContext } from 'react';
 
-const initialResumes = [
-  {
-    id: '0',
-    company: '미선택',
-    title: '이력서를 선택해주세요.',
-    data: {},
-  },
-  {
-    id: '1',
-    company: 'apple',
-    title: '애플 지원 이력서 입니다.',
-    data: {
-      intro: '안녕하세요',
-      career: '캐리어입니다.',
-    },
-  },
-  {
-    id: '2',
-    company: 'google',
-    title: '구글 지원 이력서 입니다.',
-    data: {
-      intro: '반갑습니다.',
-    },
-  },
-];
-
+const initialResumes = [];
 function resumeReducer(state, action) {
   switch (action.type) {
+    case 'SET_ALL_DATA':
+      return action.data;
     case 'CREATE':
       return { items: state.items.concat(action.item) };
     case 'CHANGE':
