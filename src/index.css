@@ -51,7 +51,7 @@ body {
     : 0;
 
     z-index
-    : 0;
+    : -10;
   }
   .style {
   backgroundImage: "url(" + "/Group 188.png" + ")";
@@ -83,11 +83,15 @@ body {
     font-size: 13pt;
   }
   .bg{
-    background: linear-gradient( to bottom, #070707,rgba(6,3,36,0.81),rgba(15,6,44,0.78)  );
+    background: linear-gradient( to bottom, #070707,rgba(6,3,36,0.81), rgba(29, 14, 89, 0.78));
   }
 
   .bg-ver2{
     background: linear-gradient(to top,rgba(38,0,32,0.81),rgba(53,42,93,0.92) );
+  }
+  .home-bg{
+    background: linear-gradient(to bottom,rgba(7, 7, 7, 1),rgba(6, 3, 36, 0.81),rgba(15, 6, 44, 0.77));
+    z-index: 1;
   }
   .boxline{
     border-color: #4383CF;
@@ -166,6 +170,51 @@ body {
   }
   .modal-login-one{
     background-color: #8994BB;
+  }
+  .chOne{
+    background-color: #877198;
+    z-index: 2;
+  }
+  .chTwo{
+    background-color: #B8B8B8;
+    z-index: 2;
+  }
+  .roundOne {
+    background-color: #f5c0c0;
+    box-shadow: inset 2px 5px 4px #AA7E7E;
+  }
+  .roundTwo {
+    background-color: #f09d9d;
+    box-shadow: inset 2px 5px 4px #9F6565;
+  }
+  .roundThree {
+    background-color: #feb2e9;
+    box-shadow: inset 6px 5px 4px #B17DA3;
+  }
+  .roundFour{
+    background-color: rgba(231, 217, 255, 0.79);
+    box-shadow: inset 4px 5px 4px #9889AF;
+  }
+  .bgRound1{
+    background: linear-gradient(to bottom, rgba(97, 76, 100, 1), rgba(107, 57, 115, 0.56),rgba(96,76,100,0));
+    border-radius: 50%;
+    width: 950px;
+    height: 1000px;
+    z-index: 3;
+
+
+  }
+  .bgRound2{
+    background:linear-gradient(to bottom, rgba(146, 139, 147, 1),rgba(97, 76, 100, 0.5156),rgba(96,76,100,0));
+    border-radius: 50%;
+    width: 850px;
+    height: 900px;
+    z-index: 3;
+
+
+  }
+  img{
+    z-index: 3;
   }
 }
 
