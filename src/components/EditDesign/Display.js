@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { WidthProvider, Responsive } from 'react-grid-layout';
 import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
@@ -9,61 +9,29 @@ import {
 } from '../../contexts/DisplayResumeContext';
 import { usePickDispatch, usePickState } from '../../contexts/PickContext';
 import { PickTemplate } from '../../templates/PickTemplate';
-import { useResumeDispatch, useResumeState } from '../../contexts/ResumeContext';
-import * as axios from 'axios';
-import useAsync from '../../hooks/useAsync';
+import { useResumeState } from '../../contexts/ResumeContext';
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
-async function getDisplayResume() {
-  const response = await axios.get(
-    'http://localhost:3001/display_resume'
-  );
-  return response.data;
-}
-
-async function getResumeContent() {
-  const response = await axios.get(
-    'http://localhost:3001/users_1_resume'
-  );
-  return response.data;
-}
-
 function Display(props) {
-  const [displayResumeState, displayResumeRefetch] = useAsync(getDisplayResume, [], true);
-  const [resumeState, resumeRefetch] = useAsync(getResumeContent, [], true);
-  const { loading: displayResumeLoading, data: displayResume, error: displayResumeError } = displayResumeState;
-  const { loading: resumeLoading, data: resumes, error: resumeError } = resumeState;
-
   const items = useDisplayResumeState();
+  const dispatch = useDisplayResumeDispatch();
+  const nextId = useDisplayResumeNextId();
   const resume = useResumeState();
 
   const { design: pickDesign, resume: pickResume } = usePickState();
-  const { i } = pickDesign; //design_type, name
+  const data = resume.filter(item => item.id === pickResume.id)?.[0]['data'];
+  dispatch({type:'SET_DATA', data:data});
+  const { i, design_type, name } = pickDesign;
+  const pickDispatch = usePickDispatch();
   const [, setLayout] = useState(null);
   const [, setBreakPoint] = useState({
     breakpoint: null,
     cols: 0,
   });
-  const dispatch = useDisplayResumeDispatch();
-  const resumeDispatch = useResumeDispatch();
-  if (!items.items.length && displayResume){
-    dispatch({ type: 'SET_ALL_DATA', data: displayResume });
-  }
-  if (!resume.length && resumes){
-    resumeDispatch({ type: 'SET_ALL_DATA', data: resumes });
-  }
 
-  const pickDispatch = usePickDispatch();
-  // const nextId = useDisplayResumeNextId();
-  const data = resume.filter(item => item.id === pickResume.id)?.[0];
-  if (data) {
-    dispatch({ type: 'SET_DATA', data: data['data'] });
-  }
-
-
-  const getDisplayData = useCallback(() => {
+  const getDisplayData = () => {
     return items;
-  }, [items]);
+  };
 
   const onPick = useCallback(
     (e, i, design_type, name) => {
@@ -77,25 +45,25 @@ function Display(props) {
     pickDispatch({ type: 'RESET_DESIGN' });
   }, [pickDispatch]);
 
-  // const onAddItem = useCallback(
-  //   (e) => {
-  //     e.preventDefault();
-  //     dispatch({
-  //       type: 'CREATE',
-  //       item: {
-  //         type: 'intro',
-  //         name: 'intro1',
-  //         i: 'new' + nextId.current,
-  //         x: 0,
-  //         y: 0,
-  //         w: 2,
-  //         h: 2,
-  //       },
-  //     });
-  //     nextId.current += 1;
-  //   },
-  //   [nextId, dispatch],
-  // );
+  const onAddItem = useCallback(
+    (e) => {
+      e.preventDefault();
+      dispatch({
+        type: 'CREATE',
+        item: {
+          type: 'intro',
+          name: 'intro1',
+          i: 'new' + nextId.current,
+          x: 0,
+          y: 0,
+          w: 2,
+          h: 2,
+        },
+      });
+      nextId.current += 1;
+    },
+    [nextId, dispatch],
+  );
 
   // We're using the cols coming back from this to calculate where to add new items.
   const onBreakpointChange = useCallback(
@@ -133,7 +101,7 @@ function Display(props) {
           }`}
         >
           <span
-            className='absolute hidden left-2 top-0 cursor-pointer group-hover:block'
+            className="absolute hidden left-2 top-0 cursor-pointer group-hover:block"
             onClick={(e) => {
               onPick(e, el.i, el.type, el.name);
             }}
@@ -141,13 +109,13 @@ function Display(props) {
             o
           </span>
           <div
-            className='drag-area h-full w-full'
+            className="drag-area h-full w-full"
             onClick={(e) => e.stopPropagation()}
           >
-            <PickTemplate key={el.id} type={el.type} name={el.name} data={el.data} display />
+            <PickTemplate type={el.type} name={el.name} data={el.data} />
           </div>
           <span
-            className='remove hidden absolute right-2 top-0 cursor-pointer group-hover:block'
+            className="remove hidden absolute right-2 top-0 cursor-pointer group-hover:block"
             onClick={() => onRemoveItem(el.i)}
           >
             x
@@ -155,12 +123,12 @@ function Display(props) {
         </div>
       );
     },
-    [i, onPick, onRemoveItem],
+    [i],
   );
 
   return (
     <div
-      className='ml-8 p-4 w-3/4 rounded-xl ring-2 ring-blue-300 ring-inset bg-white focus:outline-none min-h-screen'
+      className="ml-8 w-3/4 rounded-xl ring-2 ring-blue-300 ring-inset bg-white focus:outline-none min-h-screen"
       onClick={onNeverPick}
     >
       {/*<button onClick={onAddItem}>Add Item</button>*/}

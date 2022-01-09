@@ -115,12 +115,12 @@ function MyPage() {
             <Dialog.Overlay/>
             <MyPage_Modal/>
         </Dialog>
-        <div className=" bg-ver2  h-screen" >
-            <Navbar />
+        <div className=" bg-ver2  h-screen"  >
+            <div style={{zIndex: 1}}><Navbar  /></div>
             <div className="py-12"></div>
-            <img className="absolute max-w-screen h-screen w-screen -mt-40" src="img/final_my page bgimg.png" alt="final_my page bgimg.png" />
+            <img className="absolute max-w-screen h-screen w-screen -mt-40" style={{zIndex: -1}} src="img/final_my page bgimg.png" alt="final_my page bgimg.png" />
 
-            <div className="mt-10">
+            <div className="mt-10" >
                 <div className=" relative text-white grid justify-items-center text-4xl justify-self-center">
                     <div className="pb-10">$$님,</div>
                     <div><b>샌듀</b>와 함께</div>

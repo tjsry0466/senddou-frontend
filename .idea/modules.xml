@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-<<<<<<< HEAD
-      <module fileurl="file://$PROJECT_DIR$/.idea/senddou-frontend.iml" filepath="$PROJECT_DIR$/.idea/senddou-frontend.iml" />
-=======
-      <module fileurl="file://$PROJECT_DIR$/.idea/FrontEnd.iml" filepath="$PROJECT_DIR$/.idea/FrontEnd.iml" />
->>>>>>> master
+      <module fileurl="file://$PROJECT_DIR$/senddou-frontend.iml" filepath="$PROJECT_DIR$/senddou-frontend.iml" />
     </modules>
   </component>
 </project>

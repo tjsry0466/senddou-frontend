@@ -1,12 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import { Tab } from '@headlessui/react';
 import { usePickDispatch, usePickState } from '../../contexts/PickContext';
 import { useDisplayResumeDispatch } from '../../contexts/DisplayResumeContext';
-import { useResumeDispatch, useResumeState } from '../../contexts/ResumeContext';
+import { useResumeState } from '../../contexts/ResumeContext';
 import { PickTemplate } from '../../templates/PickTemplate';
-import { useScroll } from '../../hooks/useScroll';
-import * as axios from 'axios';
-import useAsync from '../../hooks/useAsync';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -21,41 +18,98 @@ function Resume({ company, title }) {
   );
 }
 
-async function getResumeDesign() {
-  const response = await axios.get(
-    'http://localhost:3001/resume'
-  );
-  return response.data;
-}
-
-async function getResumeContent() {
-  const response = await axios.get(
-    'http://localhost:3001/users_1_resume'
-  );
-  return response.data;
-}
-
 function Edit() {
-  const [state, refetch] = useAsync(getResumeDesign, [], true);
-  const [resumeState, resumeRefetch] = useAsync(getResumeContent, [], true);
+  const [designs] = useState([
+    {
+      id: 1,
+      type: 'intro',
+      name: 'intro',
+    },
+    {
+      id: 2,
+      type: 'project',
+      name: 'project',
+    },
+    {
+      id: 3,
+      type: 'military',
+      name: 'military',
+    },
+    {
+      id: 4,
+      type: 'career',
+      name: 'career',
+    },
+    {
+      id: 5,
+      type: 'career',
+      name: 'career1',
+    },
+    {
+      id: 6,
+      type: 'career',
+      name: 'career1',
+    },
+    {
+      id: 7,
+      type: 'career',
+      name: 'career1',
+    },
+    {
+      id: 8,
+      type: 'career',
+      name: 'career1',
+    },
+    {
+      id: 9,
+      type: 'career',
+      name: 'career1',
+    },{
+      id: 10,
+      type: 'career',
+      name: 'career1',
+    },
+    {
+      id: 11,
+      type: 'career',
+      name: 'career1',
+    },
+    {
+      id: 12,
+      type: 'career',
+      name: 'career1',
+    },
+    {
+      id: 13,
+      type: 'career',
+      name: 'career1',
+    },
+    {
+      id: 14,
+      type: 'career',
+      name: 'career1',
+    },
+    {
+      id: 15,
+      type: 'career',
+      name: 'career1',
+    },
+    {
+      id: 16,
+      type: 'career',
+      name: 'career1',
+    },
+
+  ]);
+  const resumes = useResumeState();
   const { design, resume } = usePickState();
-  const { loading, data: designs, error } = state;
-  const { loading: resumeLoading, data: resumes, error: resumeError } = resumeState;
   const { i, name, design_type } = design;
   const pickDispatch = usePickDispatch();
   const displayResumeDispatch = useDisplayResumeDispatch();
-  const { scrollY } = useScroll();
-
-  if (loading | resumeLoading) return <div>로딩중..</div>;
-  if (error | resumeError) return <div>에러가 발생했습니다</div>;
-  if (!designs | !resumes) return <button onClick={refetch}>불러오기</button>;
-
-  const isFixed = () => {
-    return scrollY > 95 ? true : false;
-  };
+  const [scroll, setScroll] = useState(false);
 
   const getDesignByType = () => {
-    return designs?.filter((i) => i.type === design_type);
+    return designs.filter((i) => i.type === design_type);
   };
 
   const pickDesignHandle = (pickedName, pickedType) => {
@@ -79,11 +133,11 @@ function Edit() {
 
   return (
     <>
-      <div className={`w-1/4 ${isFixed() ? 'block':'hidden'}`}></div>
-      <div className={`w-1/4 bg-blue-200 rounded-xl shadow ${isFixed() ? 'fixed top-2 left-2':''}`}>
+      <div className={`w-1/4 ${scroll ? 'block':'hidden'}`}></div>
+      <div className={`w-1/4 bg-blue-200 rounded-xl shadow ${scroll ? 'fixed':'block'}`}>
         <Tab.Group>
           <Tab.List className='flex flex-1 p-2 bg-blue-900/20 rounded-xl'>
-            {['디자인', '이력서'].map((category) => (
+            {['이력서', '디자인'].map((category) => (
               <Tab
                 key={category}
                 className={({ selected }) =>
@@ -100,7 +154,7 @@ function Edit() {
               </Tab>
             ))}
           </Tab.List>
-          <Tab.Panels as='nav' className="m-1">
+          <Tab.Panels as='nav' className='m-1'>
             {Object.values([designs, resumes]).map((posts, idx) => (
               <Tab.Panel
                 key={idx}
@@ -110,23 +164,22 @@ function Edit() {
                 )}
               >
                 <div
-                  className={`grid grid-cols-${idx ===0 ? '2' : '1'} gap-2 min-h-screen content-start overflow-auto`}
+                  className='flex flex-wrap min-h-screen content-start overflow-y-scroll'
                 >
                   {idx === 0 &&
                     (getDesignByType().length !== 0 ? (
                       getDesignByType().map((post) => (
                         <div
                           key={post.id}
-                          className={`w-full h-40 ring-4 ring-blue-300 rounded-lx ring-inset shadow-lg p-4 rounded-xl shadow-lg ${
+                          className={`w-1/2 h-40 ring-4 ring-blue-300 rounded-lx ring-inset shadow-lg p-4 ${
                             post.name === name && 'ring-blue-600'
                           }`}
                           onClick={() => pickDesignHandle(post.name, post.type)}
                         >
                           <PickTemplate
-                            key={post.id}
                             type={post.type}
                             name={post.name}
-                            data={post.data}
+                            data={'hello'}
                           />
                         </div>
                       ))
@@ -138,7 +191,7 @@ function Edit() {
                     posts.map((post) => (
                       <div
                         key={post.id}
-                        className={`w-full ring-4 ring-blue-300 ring-inset shadow-2xl p-2 mb-2 rounded-xl ${
+                        className={`w-full ring-4 ring-blue-300 ring-inset shadow-2xl p-2 mb-2 ${
                           post.id === resume.id && 'ring-blue-600'
                         }`}
                         onClick={() => pickResumeHandle(String(post.id))}

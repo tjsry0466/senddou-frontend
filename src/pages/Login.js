@@ -250,7 +250,7 @@ function Login() {
     }
 
     return (
-        <div className="bg h-full">
+        <div className="bg h-auto overflow-hidden">
             <Navbar/>
             <Dialog open={isOpen} onClose={() => setIsOpen(false)}>
                 <Dialog.Overlay/>

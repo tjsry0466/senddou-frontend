@@ -5,21 +5,21 @@ import Career from './career/Career';
 import Career1 from './career/Career1';
 import IntroduceMe from './introduce/IntroduceMe';
 
-export function PickTemplate({ type, name, data, display}) {
+export function PickTemplate({ type, name, data ,display}) {
   const template = {
     intro: {
-      intro: <Intro data={data} display={display}/>,
+      intro: <Intro data={data} />,
       introduceMe: <IntroduceMe data={data} display={display}/>,
     },
     project: {
-      project: <Project data={data} display={display}/>,
+      project: <Project data={data} />,
     },
     military: {
-      military: <Military data={data} display={display}/>,
+      military: <Military data={data} />,
     },
     career: {
-      career: <Career data={data} display={display}/>,
-      career1: <Career1 data={data} display={display}/>,
+      career: <Career data={data} />,
+      career1: <Career1 data={data} />,
     },
   };
 
