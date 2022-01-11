@@ -9,14 +9,14 @@ import Header from '../components/EditDesign/Header';
 function EditDesign() {
   return (
     <>
-      <div style={{ backgroundColor: 'rgb(100 116 139)' }}>
+      <div className='bg-ver2'>
         <Header />
         <div className='w-2/6 mt-3 h-1 bg-white'>
         </div>
         <ResumeProvider>
           <PickProvider>
             <DisplayResumeProvider>
-              <div className='flex pt-4 px-2'>
+              <div className='flex p-8'>
                 <Edit />
                 <Display />
               </div>

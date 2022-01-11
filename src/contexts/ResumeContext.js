@@ -10,13 +10,13 @@ function resumeReducer(state, action) {
     case 'CHANGE':
       return {
         items: state.items.map((resume) =>
-          resume.i === action.i
-            ? {
-                ...resume,
-                name: action.name,
-                type: action.design_type,
-              }
-            : resume,
+            resume.i === action.i
+                ? {
+                  ...resume,
+                  name: action.name,
+                  type: action.design_type,
+                }
+                : resume,
         ),
       };
     case 'REMOVE':
@@ -33,11 +33,11 @@ export function ResumeProvider({ children }) {
   const [state, dispatch] = useReducer(resumeReducer, initialResumes);
 
   return (
-    <ResumeStateContext.Provider value={state}>
-      <ResumeDispatchContext.Provider value={dispatch}>
-        {children}
-      </ResumeDispatchContext.Provider>
-    </ResumeStateContext.Provider>
+      <ResumeStateContext.Provider value={state}>
+        <ResumeDispatchContext.Provider value={dispatch}>
+          {children}
+        </ResumeDispatchContext.Provider>
+      </ResumeStateContext.Provider>
   );
 }
 

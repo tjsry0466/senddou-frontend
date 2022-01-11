@@ -1,8 +1,7 @@
 import React, {useCallback, useState} from 'react';
 import {Dialog} from "@headlessui/react";
-import Navbar from "../components/Common/Navbar";
+import Header from "../components/EditDesign/Header";
 import Modal from "./Modal";
-import Fade from 'react-reveal/Fade';
 
 
 function Login() {
@@ -35,7 +34,7 @@ function Login() {
                         className=" kakao border-1 border-indigo-500/0 rounded-xl flex w-64 mb-5 h-10 filter drop-shadow-lg ">
                         <button onClick={() => window.open('https://kauth.kakao.com/oauth/authorize?client_id=bb778b6314bd58c77aee20d5565a47e0&redirect_uri=http://localhost:8080/auth/kakao/callback&response_type=code', '_blank')}>
                             <img className="  h-10 rounded-xl" alt="kakao_login_large_narrow.png"
-                                 src="img/kakao_login_large_wide (2).png"/>
+                                 src="img/kakao_login_large_wide (2).png"/> /*카카오로그인*/
                         </button>
 
                     </div>
@@ -250,8 +249,8 @@ function Login() {
     }
 
     return (
-        <div className="bg h-full">
-            <Navbar/>
+        <div className="bg h-auto overflow-hidden">
+            <Header/>
             <Dialog open={isOpen} onClose={() => setIsOpen(false)}>
                 <Dialog.Overlay/>
                 <Modal/>

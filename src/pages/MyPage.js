@@ -1,7 +1,8 @@
-import Navbar from '../components/Common/Navbar';
+import Header from '../components/EditDesign/Header';
 import React, {useState} from 'react';
 import {Dialog} from "@headlessui/react";
 import MyPage_Modal from "./MyPage_Modal";
+
 
 
 
@@ -115,12 +116,18 @@ function MyPage() {
             <Dialog.Overlay/>
             <MyPage_Modal/>
         </Dialog>
-        <div className=" bg-ver2  h-screen" >
-            <Navbar />
-            <div className="py-12"></div>
-            <img className="absolute max-w-screen h-screen w-screen -mt-40" src="img/final_my page bgimg.png" alt="final_my page bgimg.png" />
+        <div className='header'>
+            <Header/>
+        </div>
 
-            <div className="mt-10">
+        <div className=" bg-ver2  h-screen overflow-hidden"   >
+            <div className="py-12"  ></div>
+            <div className='absolute -mt-28 '>
+                <img className=' h-screen w-screen '
+                     src="img/final_my page bgimg.png" alt="final_my page bgimg.png" />
+            </div>
+            <div className="mt-10" >
+
                 <div className=" relative text-white grid justify-items-center text-4xl justify-self-center">
                     <div className="pb-10">$$님,</div>
                     <div><b>샌듀</b>와 함께</div>

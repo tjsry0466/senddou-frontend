@@ -46,11 +46,11 @@ export function PickProvider({ children }) {
   const [state, dispatch] = useReducer(pickReducer, initialPick);
 
   return (
-    <PickStateContext.Provider value={state}>
-      <PickDispatchContext.Provider value={dispatch}>
-        {children}
-      </PickDispatchContext.Provider>
-    </PickStateContext.Provider>
+      <PickStateContext.Provider value={state}>
+        <PickDispatchContext.Provider value={dispatch}>
+          {children}
+        </PickDispatchContext.Provider>
+      </PickStateContext.Provider>
   );
 }
 
