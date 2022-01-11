@@ -193,32 +193,7 @@
             "content": "대학생 AI,BOOKATHON 대회 은상"
           }
         ],
-        "skill": [
-          {
-            "title": "java",
-            "content": [
-              "java를 이용한 간단한 서비스 제작"
-            ]
-          },
-          {
-            "title": "react",
-            "content": [
-              "react 서비스 홈페이지 제작 가능"
-            ]
-          },
-          {
-            "title": "Mysql",
-            "content": [
-              "데이터베이스 생성 및 정규화 하여 관리 가능"
-            ]
-          },
-          {
-            "title": "spring",
-            "content": [
-              "spring framework를 이용한 백엔드 서버 유지보수 가능"
-            ]
-          }
-        ],
+        "skill": "",
         "education": [
           {
             "title": "최종 학력 (대학교)",
@@ -285,32 +260,7 @@
             "content": "대학생 AI,BOOKATHON 대회 은상"
           }
         ],
-        "skill": [
-          {
-            "title": "java",
-            "content": [
-              "java를 이용한 간단한 서비스 제작"
-            ]
-          },
-          {
-            "title": "react",
-            "content": [
-              "react 서비스 홈페이지 제작 가능"
-            ]
-          },
-          {
-            "title": "Mysql",
-            "content": [
-              "데이터베이스 생성 및 정규화 하여 관리 가능"
-            ]
-          },
-          {
-            "title": "spring",
-            "content": [
-              "spring framework를 이용한 백엔드 서버 유지보수 가능"
-            ]
-          }
-        ],
+        "skill": "",
         "education": [
           {
             "title": "최종 학력 (대학교)",
@@ -377,32 +327,7 @@
             "content": "대학생 AI,BOOKATHON 대회 은상"
           }
         ],
-        "skill": [
-          {
-            "title": "java",
-            "content": [
-              "java를 이용한 간단한 서비스 제작"
-            ]
-          },
-          {
-            "title": "react",
-            "content": [
-              "react 서비스 홈페이지 제작 가능"
-            ]
-          },
-          {
-            "title": "Mysql",
-            "content": [
-              "데이터베이스 생성 및 정규화 하여 관리 가능"
-            ]
-          },
-          {
-            "title": "spring",
-            "content": [
-              "spring framework를 이용한 백엔드 서버 유지보수 가능"
-            ]
-          }
-        ],
+        "skill": "",
         "education": [
           {
             "title": "최종 학력 (대학교)",
@@ -469,32 +394,7 @@
             "content": "대학생 AI,BOOKATHON 대회 은상"
           }
         ],
-        "skill": [
-          {
-            "title": "java",
-            "content": [
-              "java를 이용한 간단한 서비스 제작"
-            ]
-          },
-          {
-            "title": "react",
-            "content": [
-              "react 서비스 홈페이지 제작 가능"
-            ]
-          },
-          {
-            "title": "Mysql",
-            "content": [
-              "데이터베이스 생성 및 정규화 하여 관리 가능"
-            ]
-          },
-          {
-            "title": "spring",
-            "content": [
-              "spring framework를 이용한 백엔드 서버 유지보수 가능"
-            ]
-          }
-        ],
+        "skill": "",
         "education": [
           {
             "title": "최종 학력 (대학교)",
