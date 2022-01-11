@@ -3,6 +3,8 @@ import {FcCheckmark} from "react-icons/fc";
 
 
 function Career({data, display}) {
+    console.log("career")
+    console.log(data)
     const createElement = useCallback((item) => {
         return item.map(el =>
             (<div className="px-3" key={el.id}>

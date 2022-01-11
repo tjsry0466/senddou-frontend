@@ -27,8 +27,113 @@
     },
     {
       "id": "6",
+      "type": "career",
+      "name": "career2"
+    },
+    {
+      "id": "7",
+      "type": "career",
+      "name": "career3"
+    },
+    {
+      "id": "8",
+      "type": "career",
+      "name": "career4"
+    },
+    {
+      "id": "9",
       "type": "intro",
       "name": "introduceMe"
+    },
+    {
+      "id": "10",
+      "type": "competition",
+      "name": "competition"
+    },
+    {
+      "id": "11",
+      "type": "competition",
+      "name": "competition1"
+    },
+    {
+      "id": "12",
+      "type": "competition",
+      "name": "competition2"
+    },
+    {
+      "id": "13",
+      "type": "competition",
+      "name": "competition3"
+    },
+    {
+      "id": "14",
+      "type": "competition",
+      "name": "competition4"
+    },
+    {
+      "id": "15",
+      "type": "competition",
+      "name": "competition5"
+    },
+    {
+      "id": "16",
+      "type": "education",
+      "name": "education"
+    },
+    {
+      "id": "17",
+      "type": "education",
+      "name": "education1"
+    },
+    {
+      "id": "18",
+      "type": "education",
+      "name": "education2"
+    },
+    {
+      "id": "19",
+      "type": "education",
+      "name": "education3"
+    },
+    {
+      "id": "20",
+      "type": "education",
+      "name": "education4"
+    },
+    {
+      "id": "21",
+      "type": "education",
+      "name": "education5"
+    },
+    {
+      "id": "22",
+      "type": "military",
+      "name": "militaryMe"
+    },
+    {
+      "id": "23",
+      "type": "military",
+      "name": "militaryMe1"
+    },
+    {
+      "id": "24",
+      "type": "skill",
+      "name": "skill"
+    },
+    {
+      "id": "25",
+      "type": "skill",
+      "name": "skillMe"
+    },
+    {
+      "id": "26",
+      "type": "skill",
+      "name": "skillMe1"
+    },
+    {
+      "id": "27",
+      "type": "skill",
+      "name": "skillMe2"
     }
   ],
   "users_1_resume": [
@@ -37,15 +142,91 @@
       "company": "apple",
       "title": "애플 지원 이력서 입니다.",
       "data": {
-        "intro": [{
-          "title": "무엇이든지 해결하고자 하는 마음가짐",
-          "content": ["앞에 놓여진 문제는 어떤 방법으로든 해결하고자 하는 마음가짐을 가지고 있습니다. 어떠한 문제에 대해서 다양한 시각으로 관찰하여 좀더 나은 방법으로 해결할 수 있을지 고민합니다."]
-        },
+        "intro": [
+          {
+            "title": "무엇이든지 해결하고자 하는 마음가짐",
+            "content": [
+              "앞에 놓여진 문제는 어떤 방법으로든 해결하고자 하는 마음가짐을 가지고 있습니다. 어떠한 문제에 대해서 다양한 시각으로 관찰하여 좀더 나은 방법으로 해결할 수 있을지 고민합니다."
+            ]
+          },
           {
             "title": "무엇이든지 해결하고자 하는 마음가짐2",
-            "content": ["앞에 놓여진 문제는 어떤 방법으로든 해결하고자 "]
-          }],
-        "career": "캐리어입니다."
+            "content": [
+              "앞에 놓여진 문제는 어떤 방법으로든 해결하고자 "
+            ]
+          }
+        ],
+        "military": [
+          {
+            "content": [
+              "해당없음"
+            ]
+          }
+        ],
+        "career": [
+          {
+            "date": "21.08 ~ now",
+            "content": "마이크로소프트 "
+          },
+          {
+            "date": "21.07 ~ 21.01",
+            "content": "구글 백엔드"
+          }
+        ],
+        "project": [
+          {
+            "date": "2021.09",
+            "content": "semi project"
+          },
+          {
+            "date": "2022.01",
+            "content": "final project"
+          }
+        ],
+        "competition": [
+          {
+            "title": "2019-11-08",
+            "content": "메타버스 기반 핀테크 해커톤 최우수상"
+          },
+          {
+            "title": "2019-12-12",
+            "content": "대학생 AI,BOOKATHON 대회 은상"
+          }
+        ],
+        "skill": [
+          {
+            "title": "java",
+            "content": [
+              "java를 이용한 간단한 서비스 제작"
+            ]
+          },
+          {
+            "title": "react",
+            "content": [
+              "react 서비스 홈페이지 제작 가능"
+            ]
+          },
+          {
+            "title": "Mysql",
+            "content": [
+              "데이터베이스 생성 및 정규화 하여 관리 가능"
+            ]
+          },
+          {
+            "title": "spring",
+            "content": [
+              "spring framework를 이용한 백엔드 서버 유지보수 가능"
+            ]
+          }
+        ],
+        "education": [
+          {
+            "title": "최종 학력 (대학교)",
+            "content": [
+              "4년제 대졸 (한양대학교 에리카캠퍼스)"
+            ]
+          }
+        ]
       }
     },
     {
@@ -53,12 +234,278 @@
       "company": "google",
       "title": "구글 지원 이력서 입니다.",
       "data": {
-        "intro": [{
-          "title": "무엇이든지 해결하고자 하는 마음가짐",
-          "content": ["뚜루뚜 빠라빠라 어떠한 문제에 대해서 다양한 시각으로 관찰하여 좀더 나은 방법으로 해결할 수 있을지 고민합니다."]
-        }]
+        "intro": [
+          {
+            "title": "무엇이든지 해결하고자 하는 마음가짐",
+            "content": [
+              "앞에 놓여진 문제는 어떤 방법으로든 해결하고자 하는 마음가짐을 가지고 있습니다. 어떠한 문제에 대해서 다양한 시각으로 관찰하여 좀더 나은 방법으로 해결할 수 있을지 고민합니다."
+            ]
+          },
+          {
+            "title": "무엇이든지 해결하고자 하는 마음가짐2",
+            "content": [
+              "앞에 놓여진 문제는 어떤 방법으로든 해결하고자 "
+            ]
+          }
+        ],
+        "military": [
+          {
+            "content": [
+              "해당없음"
+            ]
+          }
+        ],
+        "career": [
+          {
+            "date": "21.08 ~ now",
+            "content": "마이크로소프트 "
+          },
+          {
+            "date": "21.07 ~ 21.01",
+            "content": "구글 백엔드"
+          }
+        ],
+        "project": [
+          {
+            "date": "2021.09",
+            "content": "semi project"
+          },
+          {
+            "date": "2022.01",
+            "content": "final project"
+          }
+        ],
+        "competition": [
+          {
+            "title": "2019-11-08",
+            "content": "메타버스 기반 핀테크 해커톤 최우수상"
+          },
+          {
+            "title": "2019-12-12",
+            "content": "대학생 AI,BOOKATHON 대회 은상"
+          }
+        ],
+        "skill": [
+          {
+            "title": "java",
+            "content": [
+              "java를 이용한 간단한 서비스 제작"
+            ]
+          },
+          {
+            "title": "react",
+            "content": [
+              "react 서비스 홈페이지 제작 가능"
+            ]
+          },
+          {
+            "title": "Mysql",
+            "content": [
+              "데이터베이스 생성 및 정규화 하여 관리 가능"
+            ]
+          },
+          {
+            "title": "spring",
+            "content": [
+              "spring framework를 이용한 백엔드 서버 유지보수 가능"
+            ]
+          }
+        ],
+        "education": [
+          {
+            "title": "최종 학력 (대학교)",
+            "content": [
+              "4년제 대졸 (한양대학교 에리카캠퍼스)"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "3",
+      "company": "naver",
+      "title": "네이버 지원 이력서 입니다.",
+      "data": {
+        "intro": [
+          {
+            "title": "무엇이든지 해결하고자 하는 마음가짐",
+            "content": [
+              "앞에 놓여진 문제는 어떤 방법으로든 해결하고자 하는 마음가짐을 가지고 있습니다. 어떠한 문제에 대해서 다양한 시각으로 관찰하여 좀더 나은 방법으로 해결할 수 있을지 고민합니다."
+            ]
+          },
+          {
+            "title": "무엇이든지 해결하고자 하는 마음가짐2",
+            "content": [
+              "앞에 놓여진 문제는 어떤 방법으로든 해결하고자 "
+            ]
+          }
+        ],
+        "military": [
+          {
+            "content": [
+              "해당없음"
+            ]
+          }
+        ],
+        "career": [
+          {
+            "date": "21.08 ~ now",
+            "content": "마이크로소프트 "
+          },
+          {
+            "date": "21.07 ~ 21.01",
+            "content": "구글 백엔드"
+          }
+        ],
+        "project": [
+          {
+            "date": "2021.09",
+            "content": "semi project"
+          },
+          {
+            "date": "2022.01",
+            "content": "final project"
+          }
+        ],
+        "competition": [
+          {
+            "title": "2019-11-08",
+            "content": "메타버스 기반 핀테크 해커톤 최우수상"
+          },
+          {
+            "title": "2019-12-12",
+            "content": "대학생 AI,BOOKATHON 대회 은상"
+          }
+        ],
+        "skill": [
+          {
+            "title": "java",
+            "content": [
+              "java를 이용한 간단한 서비스 제작"
+            ]
+          },
+          {
+            "title": "react",
+            "content": [
+              "react 서비스 홈페이지 제작 가능"
+            ]
+          },
+          {
+            "title": "Mysql",
+            "content": [
+              "데이터베이스 생성 및 정규화 하여 관리 가능"
+            ]
+          },
+          {
+            "title": "spring",
+            "content": [
+              "spring framework를 이용한 백엔드 서버 유지보수 가능"
+            ]
+          }
+        ],
+        "education": [
+          {
+            "title": "최종 학력 (대학교)",
+            "content": [
+              "4년제 대졸 (한양대학교 에리카캠퍼스)"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "4",
+      "company": "NEOWIZ",
+      "title": "NEOWIZ 지원 이력서 입니다.",
+      "data": {
+        "intro": [
+          {
+            "title": "무엇이든지 해결하고자 하는 마음가짐",
+            "content": [
+              "앞에 놓여진 문제는 어떤 방법으로든 해결하고자 하는 마음가짐을 가지고 있습니다. 어떠한 문제에 대해서 다양한 시각으로 관찰하여 좀더 나은 방법으로 해결할 수 있을지 고민합니다."
+            ]
+          },
+          {
+            "title": "무엇이든지 해결하고자 하는 마음가짐2",
+            "content": [
+              "앞에 놓여진 문제는 어떤 방법으로든 해결하고자 "
+            ]
+          }
+        ],
+        "military": [
+          {
+            "content": [
+              "해당없음"
+            ]
+          }
+        ],
+        "career": [
+          {
+            "date": "21.08 ~ now",
+            "content": "마이크로소프트 "
+          },
+          {
+            "date": "21.07 ~ 21.01",
+            "content": "구글 백엔드"
+          }
+        ],
+        "project": [
+          {
+            "date": "2021.09",
+            "content": "semi project"
+          },
+          {
+            "date": "2022.01",
+            "content": "final project"
+          }
+        ],
+        "competition": [
+          {
+            "title": "2019-11-08",
+            "content": "메타버스 기반 핀테크 해커톤 최우수상"
+          },
+          {
+            "title": "2019-12-12",
+            "content": "대학생 AI,BOOKATHON 대회 은상"
+          }
+        ],
+        "skill": [
+          {
+            "title": "java",
+            "content": [
+              "java를 이용한 간단한 서비스 제작"
+            ]
+          },
+          {
+            "title": "react",
+            "content": [
+              "react 서비스 홈페이지 제작 가능"
+            ]
+          },
+          {
+            "title": "Mysql",
+            "content": [
+              "데이터베이스 생성 및 정규화 하여 관리 가능"
+            ]
+          },
+          {
+            "title": "spring",
+            "content": [
+              "spring framework를 이용한 백엔드 서버 유지보수 가능"
+            ]
+          }
+        ],
+        "education": [
+          {
+            "title": "최종 학력 (대학교)",
+            "content": [
+              "4년제 대졸 (한양대학교 에리카캠퍼스)"
+            ]
+          }
+        ]
       }
     }
+
   ],
   "display_resume": {
     "items": [
@@ -78,7 +525,7 @@
         "x": 2,
         "y": 0,
         "w": 2,
-        "h": 2
+        "h": 3
       },
       {
         "type": "military",
@@ -94,6 +541,33 @@
         "name": "project",
         "i": "3",
         "x": 6,
+        "y": 0,
+        "w": 2,
+        "h": 2
+      },
+      {
+        "type": "competition",
+        "name": "Competition",
+        "i": "4",
+        "x": 6,
+        "y": 0,
+        "w": 2,
+        "h": 2
+      },
+      {
+        "type": "education",
+        "name": "education",
+        "i": "5",
+        "x": 10,
+        "y": 0,
+        "w": 2,
+        "h": 2
+      },
+      {
+        "type": "skill",
+        "name": "skill",
+        "i": "6",
+        "x": 10,
         "y": 0,
         "w": 2,
         "h": 2

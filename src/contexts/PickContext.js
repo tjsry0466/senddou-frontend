@@ -4,7 +4,6 @@ const initialPick = {
   design: { i: '', design_type: '', name: '' },
   resume: { id: '0' },
 };
-
 function pickReducer(state, action) {
   switch (action.type) {
     case 'SET_DESIGN':
@@ -47,11 +46,11 @@ export function PickProvider({ children }) {
   const [state, dispatch] = useReducer(pickReducer, initialPick);
 
   return (
-    <PickStateContext.Provider value={state}>
-      <PickDispatchContext.Provider value={dispatch}>
-        {children}
-      </PickDispatchContext.Provider>
-    </PickStateContext.Provider>
+      <PickStateContext.Provider value={state}>
+        <PickDispatchContext.Provider value={dispatch}>
+          {children}
+        </PickDispatchContext.Provider>
+      </PickStateContext.Provider>
   );
 }
 
