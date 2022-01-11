@@ -1,11 +1,13 @@
 /* This example requires Tailwind CSS v2.0+ */
 import React from 'react';
-// import { Disclosure, Menu, Transition } from '@headlessui/react';
-// import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
+import { Disclosure, Menu, Transition } from '@headlessui/react';
+import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
 import { Link } from 'react-router-dom';
 
 const navigation = [
-  { name: 'SHARE', to: '/resume', current: false },
+
+    { name: 'SHARE', to: '/resume', current: false },
+    { name: 'RESUME', to: '/edit/design', current: false },
   { name: '마이페이지', to: '/my-page', current: false },
 ];
 
@@ -17,6 +19,7 @@ export default function Header() {
   return (
     <div className='flex justify-around items-end max-w-full pt-8 bg-sky-500/100 font-medium'>
       <div className="text-white text-4xl text-center">SENDDOU</div>
+        <div className='border-t-4 bg-white w-auto'></div>
       <div>
         {navigation.map((item) => (
           <Link

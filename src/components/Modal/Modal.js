@@ -1,191 +1,94 @@
 import React from "react";
 import { white } from 'tailwindcss/colors';
-import Slider from "react-slick";
-import Fade from "react-reveal/Fade";
 
 export default function Modal() {
   const [showModal, setShowModal] = React.useState(false);
   const [showModal2, setShowModal2] = React.useState(false);
   const [showModal3, setShowModal3] = React.useState(false);
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    pauseOnHover: true,
-    swipeToSlide: true,
-  };
-
+  const [showModal4, setShowModal4] = React.useState(false);
+  const [showModal5, setShowModal5] = React.useState(false);
+  const [showModal6, setShowModal6] = React.useState(false);
+  const [showModal7, setShowModal7] = React.useState(false);
+  const [showModal8, setShowModal8] = React.useState(false);
+  const [showModal9, setShowModal9] = React.useState(false);
   return (
     <>
-
-      <div className="bg-purple-900 rounded-3xl bg-opacity-40 mx-60">
-        <Fade bottom>
-          <div
-              className="pb-24 mt-24 px-40">
-            <div className=" md:px-10 sm:px-5">
-              <div>
-                <Slider {...settings}>
-                  <div >
-                    <button
-                        className="py-20"
-                        type="button"
-                        onClick={() => setShowModal(true)}
-                    >
-                      <img
-                          className="imgbox3"
-                          src="/temimg.png"
-                          alt=""
-                      />
-                      <div className="flex justify-between">
-                        <h1 className="text-white text-left"><b className="text-blue-300" style={{background:white}}>#</b>태그</h1>
-                        <h1 className="text-white text-right">
-                          <svg className="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
-                            <polyline points="16 6 12 2 8 6" />
-                            <line x1="12" y1="2" x2="12" y2="15" />
-                          </svg>
-                        </h1>
-                      </div>
-
-                    </button>
-                  </div>
-                  <div >
-                    <button
-                        className="py-20"
-                        type="button"
-                        onClick={() => setShowModal2(true)}
-                    >
-                      <img
-                          className="imgbox3"
-                          src="/temimg.png"
-                          alt=""
-                      />
-                      <div className="flex justify-between">
-                        <h1 className="text-white text-left"><b className="text-blue-300" style={{background:white}}>#</b>태그</h1>
-                        <h1 className="text-white text-right">
-                          <svg className="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
-                            <polyline points="16 6 12 2 8 6" />
-                            <line x1="12" y1="2" x2="12" y2="15" />
-                          </svg>
-                        </h1>
-                      </div>
-
-                    </button>
-                  </div>
-                  <div>
-                    <button
-                        className="py-20"
-                        type="button"
-                        onClick={() => setShowModal3(true)}
-                    >
-                      <img
-                          className="imgbox3"
-                          src="/temimg.png"
-                          alt=""
-                      />
-                      <div className="flex justify-between">
-                        <h1 className="text-white text-left"><b className="text-blue-300" style={{background:white}}>#</b>태그</h1>
-                        <h1 className="text-white text-right">
-                          <svg className="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
-                            <polyline points="16 6 12 2 8 6" />
-                            <line x1="12" y1="2" x2="12" y2="15" />
-                          </svg>
-                        </h1>
-                      </div>
-
-                    </button>
-                  </div>
-                  <div >
-                    <button
-                        className="py-20"
-                        type="button"
-                        onClick={() => setShowModal(true)}
-                    >
-                      <img
-                          className="imgbox3"
-                          src="/temimg.png"
-                          alt=""
-                      />
-                      <div className="flex justify-between">
-                        <h1 className="text-white text-left"><b className="text-blue-300" style={{background:white}}>#</b>태그</h1>
-                        <h1 className="text-white text-right">
-                          <svg className="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
-                            <polyline points="16 6 12 2 8 6" />
-                            <line x1="12" y1="2" x2="12" y2="15" />
-                          </svg>
-                        </h1>
-                      </div>
-
-                    </button>
-                  </div>
-                  <div >
-                    <button
-                        className="py-20"
-                        type="button"
-                        onClick={() => setShowModal2(true)}
-                    >
-                      <img
-                          className="imgbox3"
-                          src="/temimg.png"
-                          alt=""
-                      />
-                      <div className="flex justify-between">
-                        <h1 className="text-white text-left"><b className="text-blue-300" style={{background:white}}>#</b>태그</h1>
-                        <h1 className="text-white text-right">
-                          <svg className="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
-                            <polyline points="16 6 12 2 8 6" />
-                            <line x1="12" y1="2" x2="12" y2="15" />
-                          </svg>
-                        </h1>
-                      </div>
-
-                    </button>
-                  </div>
-                  <div>
-                    <button
-                        className="py-20"
-                        type="button"
-                        onClick={() => setShowModal3(true)}
-                    >
-                      <img
-                          className="imgbox3"
-                          src="/temimg.png"
-                          alt=""
-                      />
-                      <div className="flex justify-between">
-                        <h1 className="text-white text-left"><b className="text-blue-300" style={{background:white}}>#</b>태그</h1>
-                        <h1 className="text-white text-right">
-                          <svg className="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
-                            <polyline points="16 6 12 2 8 6" />
-                            <line x1="12" y1="2" x2="12" y2="15" />
-                          </svg>
-                        </h1>
-                      </div>
-
-                    </button>
-                  </div>
-                </Slider>
-              </div>
-            </div>
+        <div className="flex justify-between py-14 mx-auto text-center imgbox4">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button
+          className="w-3/12 py-20"
+          type="button"
+          onClick={() => setShowModal(true)}
+        >
+          <img
+            className="imgbox2"
+            src="/temimg.png"
+            alt=""
+          />
+          <div className="flex justify-between">
+            <h1 className="text-white text-left"><b className="text-blue-300" style={{background:white}}>#</b>태그</h1>
+            &nbsp;
+            <h1 className="text-white text-right">
+              <svg className="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+                <polyline points="16 6 12 2 8 6" />
+                <line x1="12" y1="2" x2="12" y2="15" />
+              </svg>
+            </h1>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           </div>
-        </Fade>
-      </div>
+        </button>
 
+        <button
+          className="w-3/12"
+          type="button"
+          onClick={() => setShowModal2(true)}
+        >
+          <img
+            className="imgbox3"
+            src="/temimg.png"
+            alt=""
+          />
+          <div className="flex justify-between">
+            <h1 className="text-white text-left"><b className="text-blue-300" style={{background:white}}>#</b>태그</h1>
+            <h1 className="text-white text-right px-14">
+              <svg className="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+                <polyline points="16 6 12 2 8 6" />
+                <line x1="12" y1="2" x2="12" y2="15" />
+              </svg>
+            </h1>
+          </div>
+        </button>
+
+        <button
+          className="w-3/12 py-20"
+          type="button"
+          onClick={() => setShowModal3(true)}
+        >
+          <img
+            className="imgbox2"
+            src="/temimg.png"
+            alt=""
+          />
+          <div className="flex justify-between">
+            <h1 className="text-white text-left"><b className="text-blue-300" style={{background:white}}>#</b>태그</h1>
+            &nbsp;
+            <h1 className="text-white text-right">
+              <svg className="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+                <polyline points="16 6 12 2 8 6" />
+                <line x1="12" y1="2" x2="12" y2="15" />
+              </svg>
+            </h1>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </div>
+        </button>
+      </div>
 
       {/*모달*/}
       {showModal ? (
@@ -204,7 +107,7 @@ export default function Modal() {
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   &nbsp;&nbsp;&nbsp;&nbsp;
-                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;  
                   <h3 className="text-2xl font-semibold">
                     --기업 지원 이력서
                   </h3>
@@ -225,8 +128,8 @@ export default function Modal() {
                 <div className="relative p-6 flex justify-center">
                   <p className="my-4 text-blueGray-500 text-lg leading-relaxed">
                     <img
-                      className="modal01"
-                        src="/temimg.png"
+                      className="imgbox6"
+                      src="/temimg.png"
                       alt=""
                     />
                   </p>
@@ -290,8 +193,8 @@ export default function Modal() {
                 <div className="relative p-6 flex justify-center">
                   <p className="my-4 text-blueGray-500 text-lg leading-relaxed">
                     <img
-                      className="modal01"
-                        src="/temimg.png"
+                      className="imgbox6"
+                      src="/temimg.png"
                       alt=""
                     />
                   </p>
@@ -355,8 +258,8 @@ export default function Modal() {
                 <div className="relative p-6 flex justify-center">
                   <p className="my-4 text-blueGray-500 text-lg leading-relaxed">
                     <img
-                      className="modal01"
-                        src="/temimg.png"
+                      className="imgbox6"
+                      src="/temimg.png"
                       alt=""
                     />
                   </p>
