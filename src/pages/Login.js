@@ -1,6 +1,6 @@
 import React, {useCallback, useState} from 'react';
 import {Dialog} from "@headlessui/react";
-import Navbar from "../components/Common/Navbar";
+import Header from "../components/EditDesign/Header";
 import Modal from "./Modal";
 
 
@@ -250,7 +250,7 @@ function Login() {
 
     return (
         <div className="bg h-auto overflow-hidden">
-            <Navbar/>
+            <Header/>
             <Dialog open={isOpen} onClose={() => setIsOpen(false)}>
                 <Dialog.Overlay/>
                 <Modal/>

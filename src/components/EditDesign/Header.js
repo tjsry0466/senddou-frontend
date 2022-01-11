@@ -18,7 +18,7 @@ function classNames(...classes) {
 export default function Header() {
   return (
     <div className='flex justify-around items-end max-w-full pt-8 bg-sky-500/100 font-medium'>
-      <div className="text-white text-4xl text-center">SENDDOU</div>
+      <div className="text-white text-4xl text-center hover:bg-gray-700" ><a href="/">SENDDOU</a></div>
         <div className='border-t-4 bg-white w-auto'></div>
       <div>
         {navigation.map((item) => (

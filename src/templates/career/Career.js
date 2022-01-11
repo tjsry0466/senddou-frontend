@@ -1,5 +1,5 @@
 import React, {useCallback} from 'react';
-import {FcCheckmark} from "react-icons/fc";
+import {FcBusinessman} from "react-icons/fc";
 
 
 function Career({data, display}) {
@@ -15,7 +15,7 @@ function Career({data, display}) {
     }, []);
 
     return (<div className='h-full border-2 border-gray-300 rounded-xl px-2 py-2 '>
-            <div className={`${display && 'text-3xl'} flex font-bold font-mono p-2`}><FcCheckmark/>Career</div>
+            <div className={`${display && 'text-3xl'} flex font-bold font-mono p-2`}><FcBusinessman/>Career</div>
             <div className='h-0.5 '></div>
             <>
                 {data ? (display && createElement(data)) :

@@ -101,7 +101,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="relative">
-                    <div className="sm:flex align-text-top font-bold text-3xl">
+                    <div className="sm:flex italic align-text-top font-bold ">
                         <Fade left>
                             <div className="w-6/12">
                                 <img className="bg-cover rounded-r-3xl"
@@ -110,9 +110,9 @@ const Home = () => {
                             </div>
                         </Fade>
                         <div className="pl-5 w-6/12 text-white">
-                            <h1 className="mt-10 mb-20">#drag-drop</h1>
-                            <p className="mb-2 md:mb-6 text-2xl pl-40">유저들이 디자인한 컴포넌트를 쉽게 배치하세요<br/><br/>
-                                드래그를 이용하여 컴포넌트를 옮길수 있습니다.<br/><br/>
+                            <h1 className="mt-10 text-5xl mb-12">#drag-drop</h1>
+                            <p className="mb-2 md:mb-6 text-2xl px-10 ml-10 border-2 rounded-l-lg  py-32">유저들이 디자인한 컴포넌트를 쉽게 배치하세요<br/>
+                                드래그를 이용하여 컴포넌트를 옮길수 있습니다.<br/>
                                 컴포넌트의 크기를 자유롭게 조정하여 다양한 이력서의 형식으로 재탄생 시켜보세요!</p>
                         </div>
                     </div>

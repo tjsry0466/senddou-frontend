@@ -1,5 +1,5 @@
 import React, {useCallback} from 'react';
-import {FcBusinessman} from "react-icons/fc";
+import {FcLibrary} from "react-icons/fc";
 
 function Competition({data, display}) {
     const createElement = useCallback((item) => {
@@ -12,7 +12,7 @@ function Competition({data, display}) {
     }, []);
 
     return (<div className='h-full border-2 border-gray-300 rounded-xl px-2 py-2 '>
-            <div className={`${display && 'text-3xl'} flex font-bold font-mono p-2`}><FcBusinessman/>Competition</div>
+            <div className={`${display && 'text-3xl'} flex font-bold font-mono p-2`}><FcLibrary/>Competition</div>
             <div className='h-0.5 '></div>
             <>
                 {data ? (display && createElement(data)) :
