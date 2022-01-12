@@ -10,176 +10,244 @@ export default function Modal2() {
   const [showModal6, setShowModal6] = React.useState(false);
   return (
     <>
-      <div className="flex justify-around py-14 mx-auto text-center">
+
+
+
+
+      <div className="flex justify-between py-14 px-8 mx-auto">
+
         <button
-          className="w-2/12 py-14"
+          className=""
           type="button"
           onClick={() => setShowModal(true)}
         >
-          <div className="relative">
-          <img
-            className="imgbox5"
-            src="/temimg.png"
-            alt=""
-          />
-            <p className="circle1 py-8 text-white">
-              <p>#태그</p>
-              &nbsp;
-              <p>
-                <svg className="h-6 w-32 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                      stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
-                <polyline points="16 6 12 2 8 6" />
-                <line x1="12" y1="2" x2="12" y2="15" />
-                </svg>
-              </p>
-              &nbsp;
-              <p>--님</p>
-            </p>
+          <div className="bg-slate-700 w-full py-10 px-10">
+            <div>
+              <div className="sm:flex space-x-4 md:items-start items-center">
+                <div className="mb-4">
+                  <img
+                    className="imgbox4"
+                    src="img/temimg.png"
+                    alt=""
+                  />
+                </div>
+
+                <div style={{zIndex:5}}>
+                  &nbsp;
+                  <p className="text-slate-100 font-bold my-16  text-white">#애플</p>
+                  <div className="flex justify-right">
+                    <h1 className="text-white text-right">
+                      <svg className="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+                        <polyline points="16 6 12 2 8 6" />
+                        <line x1="12" y1="2" x2="12" y2="15" />
+                      </svg>
+                    </h1>
+                    <h1 className="text-white">59</h1>
+                  </div>
+                  <p className="text-slate-100 font-bold my-16 text-white">000님</p>
+                </div>
+              </div>
+            </div>
           </div>
+
         </button>
 
         <button
-          className="w-2/12 py-14"
+          className=""
           type="button"
           onClick={() => setShowModal2(true)}
         >
-          <div className="relative">
-            <img
-              className="imgbox5"
-              src="/temimg.png"
-              alt=""
-            />
-            <p className="circle1 py-8 text-white">
-              <p>#태그</p>
-              &nbsp;
-              <p>
-                <svg className="h-6 w-32 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
-                  <polyline points="16 6 12 2 8 6" />
-                  <line x1="12" y1="2" x2="12" y2="15" />
-                </svg>
-              </p>
-              &nbsp;
-              <p>--님</p>
-            </p>
+          <div className="bg-slate-700 w-full py-10 px-10">
+            <div>
+              <div className="sm:flex space-x-4 md:items-start items-center">
+                <div className="mb-4">
+                  <img
+                    className="imgbox4"
+                    src="img/temimg.png"
+                    alt=""
+                  />
+                </div>
+
+                <div style={{zIndex:5}}>
+                  &nbsp;
+                  <p className="text-slate-100 font-bold my-16  text-white">#삼성</p>
+                  <div className="flex justify-right">
+                    <h1 className="text-white text-right">
+                      <svg className="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+                        <polyline points="16 6 12 2 8 6" />
+                        <line x1="12" y1="2" x2="12" y2="15" />
+                      </svg>
+                    </h1>
+                    <h1 className="text-white">48</h1>
+                  </div>
+                  <p className="text-slate-100 font-bold my-16 text-white">000님</p>
+                </div>
+              </div>
+            </div>
           </div>
+
         </button>
 
         <button
-          className="w-2/12 py-14"
+          className=""
           type="button"
           onClick={() => setShowModal3(true)}
         >
-          <div className="relative">
-            <img
-              className="imgbox5"
-              src="/temimg.png"
-              alt=""
-            />
-            <p className="circle1 py-8 text-white">
-              <p>#태그</p>
-              &nbsp;
-              <p>
-                <svg className="h-6 w-32 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
-                  <polyline points="16 6 12 2 8 6" />
-                  <line x1="12" y1="2" x2="12" y2="15" />
-                </svg>
-              </p>
-              &nbsp;
-              <p>--님</p>
-            </p>
+          <div className="bg-slate-700 w-full py-10 px-10">
+            <div>
+              <div className="sm:flex space-x-4 md:items-start items-center">
+                <div className="mb-4">
+                  <img
+                    className="imgbox4"
+                    src="img/temimg.png"
+                    alt=""
+                  />
+                </div>
+
+                <div style={{zIndex:5}}>
+                  &nbsp;
+                  <p className="text-slate-100 font-bold my-16  text-white">#LG</p>
+                  <div className="flex justify-right">
+                    <h1 className="text-white text-right">
+                      <svg className="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+                        <polyline points="16 6 12 2 8 6" />
+                        <line x1="12" y1="2" x2="12" y2="15" />
+                      </svg>
+                    </h1>
+                    <h1 className="text-white">32</h1>
+                  </div>
+                  <p className="text-slate-100 font-bold my-16 text-white">000님</p>
+                </div>
+              </div>
+            </div>
           </div>
+
         </button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       </div>
 
-      <div className="flex justify-around py-14 mx-auto text-center">
+      <div className="flex justify-between py-6 px-8 mx-auto" >
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <button
-          className="w-2/12 py-14"
+          className=""
           type="button"
           onClick={() => setShowModal4(true)}
         >
-          <div className="relative" style={{left:100}}>
-            <img
-              className="imgbox5"
-              src="/temimg.png"
-              alt=""
-            />
-            <p className="circle1 py-8 text-white">
-              <p>#태그</p>
-              &nbsp;
-              <p>
-                <svg className="h-6 w-32 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
-                  <polyline points="16 6 12 2 8 6" />
-                  <line x1="12" y1="2" x2="12" y2="15" />
-                </svg>
-              </p>
-              &nbsp;
-              <p>--님</p>
-            </p>
+          <div className="bg-slate-700 w-full py-10 px-10">
+            <div>
+              <div className="sm:flex space-x-4 md:items-start items-center">
+                <div className="mb-4">
+                  <img
+                    className="imgbox4"
+                    src="img/temimg.png"
+                    alt=""
+                  />
+                </div>
+
+                <div style={{zIndex:5}}>
+                  &nbsp;
+                  <p className="text-slate-100 font-bold my-16  text-white">#롯데</p>
+                  <div className="flex justify-right">
+                    <h1 className="text-white text-right">
+                      <svg className="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+                        <polyline points="16 6 12 2 8 6" />
+                        <line x1="12" y1="2" x2="12" y2="15" />
+                      </svg>
+                    </h1>
+                    <h1 className="text-white">27</h1>
+                  </div>
+                  <p className="text-slate-100 font-bold my-16 text-white">000님</p>
+                </div>
+              </div>
+            </div>
           </div>
+
         </button>
 
         <button
-          className="w-2/12 py-14"
+          className=""
           type="button"
           onClick={() => setShowModal5(true)}
         >
-          <div className="relative" style={{left:100}}>
-            <img
-              className="imgbox5"
-              src="/temimg.png"
-              alt=""
-            />
-            <p className="circle1 py-8 text-white">
-              <p>#태그</p>
-              &nbsp;
-              <p>
-                <svg className="h-6 w-32 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
-                  <polyline points="16 6 12 2 8 6" />
-                  <line x1="12" y1="2" x2="12" y2="15" />
-                </svg>
-              </p>
-              &nbsp;
-              <p>--님</p>
-            </p>
+          <div className="bg-slate-700 w-full py-10 px-10">
+            <div>
+              <div className="sm:flex space-x-4 md:items-start items-center">
+                <div className="mb-4">
+                  <img
+                    className="imgbox4"
+                    src="img/temimg.png"
+                    alt=""
+                  />
+                </div>
+
+                <div style={{zIndex:5}}>
+                  &nbsp;
+                  <p className="text-slate-100 font-bold my-16  text-white">#기아</p>
+                  <div className="flex justify-right">
+                    <h1 className="text-white text-right">
+                      <svg className="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+                        <polyline points="16 6 12 2 8 6" />
+                        <line x1="12" y1="2" x2="12" y2="15" />
+                      </svg>
+                    </h1>
+                    <h1 className="text-white">25</h1>
+                  </div>
+                  <p className="text-slate-100 font-bold my-16 text-white">000님</p>
+                </div>
+              </div>
+            </div>
           </div>
+
         </button>
 
         <button
-          className="w-2/12 py-14"
+          className=""
           type="button"
           onClick={() => setShowModal6(true)}
         >
-          <div className="relative" style={{left:100}}>
-            <img
-              className="imgbox5"
-              src="/temimg.png"
-              alt=""
-            />
-            <p className="circle1 py-8 text-white">
-              <p>#태그</p>
-              &nbsp;
-              <p>
-                <svg className="h-6 w-32 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
-                  <polyline points="16 6 12 2 8 6" />
-                  <line x1="12" y1="2" x2="12" y2="15" />
-                </svg>
-              </p>
-              &nbsp;
-              <p>--님</p>
-            </p>
+          <div className="bg-slate-700 w-full py-10 px-10">
+            <div>
+              <div className="sm:flex space-x-4 md:items-start items-center">
+                <div className="mb-4">
+                  <img
+                    className="imgbox4"
+                    src="img/temimg.png"
+                    alt=""
+                  />
+                </div>
+
+                <div style={{zIndex:5}}>
+                  &nbsp;
+                  <p className="text-slate-100 font-bold my-16  text-white">#한화</p>
+                  <div className="flex justify-right">
+                    <h1 className="text-white text-right">
+                      <svg className="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+                        <polyline points="16 6 12 2 8 6" />
+                        <line x1="12" y1="2" x2="12" y2="15" />
+                      </svg>
+                    </h1>
+                    <h1 className="text-white">22</h1>
+                  </div>
+                  <p className="text-slate-100 font-bold my-16 text-white">000님</p>
+                </div>
+              </div>
+            </div>
           </div>
+
         </button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       </div>
 
 
@@ -194,15 +262,15 @@ export default function Modal2() {
               <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                 {/*header*/}
                 <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
-                  <h3 className="text-2xl font-semibold">
-                    ###님
+                  <h3 className="text-1xl font-semibold">
+                    000님
                   </h3>
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   <h3 className="text-2xl font-semibold">
-                    --기업 지원 이력서
+                    애플 지원 이력서
                   </h3>
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   &nbsp;&nbsp;&nbsp;&nbsp;
@@ -221,8 +289,8 @@ export default function Modal2() {
                 <div className="relative p-6 flex justify-center">
                   <p className="my-4 text-blueGray-500 text-lg leading-relaxed">
                     <img
-                      className="imgbox6"
-                      src="/temimg.png"
+                      className="modal01"
+                      src="img/temimg.png"
                       alt=""
                     />
                   </p>
@@ -232,7 +300,7 @@ export default function Modal2() {
                   <button
                     className="bg-white text-white active:bg-blue-600 font-bold uppercase text-sm px-3 py-3 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button"
-                    onClick={() => setShowModal(false)}
+                    onClick={() => alert("공유되었습니다.")}
                   >
                     <svg className="h-6 w-6 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -240,6 +308,7 @@ export default function Modal2() {
                       <polyline points="16 6 12 2 8 6" />
                       <line x1="12" y1="2" x2="12" y2="15" />
                     </svg>
+                    <p className="text-black">59</p>
                   </button>
                 </div>
               </div>
@@ -259,15 +328,15 @@ export default function Modal2() {
               <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                 {/*header*/}
                 <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
-                  <h3 className="text-2xl font-semibold">
-                    ###님
+                  <h3 className="text-1xl font-semibold">
+                    000님
                   </h3>
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   <h3 className="text-2xl font-semibold">
-                    --기업 지원 이력서2
+                    삼성 지원 이력서
                   </h3>
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   &nbsp;&nbsp;&nbsp;&nbsp;
@@ -286,8 +355,8 @@ export default function Modal2() {
                 <div className="relative p-6 flex justify-center">
                   <p className="my-4 text-blueGray-500 text-lg leading-relaxed">
                     <img
-                      className="imgbox6"
-                      src="/temimg.png"
+                      className="modal01"
+                      src="img/temimg.png"
                       alt=""
                     />
                   </p>
@@ -297,7 +366,7 @@ export default function Modal2() {
                   <button
                     className="bg-white text-white active:bg-blue-600 font-bold uppercase text-sm px-3 py-3 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button"
-                    onClick={() => setShowModal2(false)}
+                    onClick={() => alert("공유되었습니다.")}
                   >
                     <svg className="h-6 w-6 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -305,6 +374,7 @@ export default function Modal2() {
                       <polyline points="16 6 12 2 8 6" />
                       <line x1="12" y1="2" x2="12" y2="15" />
                     </svg>
+                    <p className="text-black">48</p>
                   </button>
                 </div>
               </div>
@@ -324,15 +394,15 @@ export default function Modal2() {
               <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                 {/*header*/}
                 <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
-                  <h3 className="text-2xl font-semibold">
-                    ###님
+                  <h3 className="text-1xl font-semibold">
+                    000님
                   </h3>
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   <h3 className="text-2xl font-semibold">
-                    --기업 지원 이력서3
+                    LG 지원 이력서
                   </h3>
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   &nbsp;&nbsp;&nbsp;&nbsp;
@@ -351,8 +421,8 @@ export default function Modal2() {
                 <div className="relative p-6 flex justify-center">
                   <p className="my-4 text-blueGray-500 text-lg leading-relaxed">
                     <img
-                      className="imgbox6"
-                      src="/temimg.png"
+                      className="modal01"
+                      src="img/temimg.png"
                       alt=""
                     />
                   </p>
@@ -362,7 +432,7 @@ export default function Modal2() {
                   <button
                     className="bg-white text-white active:bg-blue-600 font-bold uppercase text-sm px-3 py-3 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button"
-                    onClick={() => setShowModal3(false)}
+                    onClick={() => alert("공유되었습니다.")}
                   >
                     <svg className="h-6 w-6 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -370,6 +440,7 @@ export default function Modal2() {
                       <polyline points="16 6 12 2 8 6" />
                       <line x1="12" y1="2" x2="12" y2="15" />
                     </svg>
+                    <p className="text-black">32</p>
                   </button>
                 </div>
               </div>
@@ -389,15 +460,15 @@ export default function Modal2() {
               <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                 {/*header*/}
                 <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
-                  <h3 className="text-2xl font-semibold">
-                    ###님
+                  <h3 className="text-1xl font-semibold">
+                    000님
                   </h3>
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   <h3 className="text-2xl font-semibold">
-                    --기업 지원 이력서4
+                    롯데 지원 이력서
                   </h3>
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   &nbsp;&nbsp;&nbsp;&nbsp;
@@ -416,8 +487,8 @@ export default function Modal2() {
                 <div className="relative p-6 flex justify-center">
                   <p className="my-4 text-blueGray-500 text-lg leading-relaxed">
                     <img
-                      className="imgbox6"
-                      src="/temimg.png"
+                      className="modal01"
+                      src="img/temimg.png"
                       alt=""
                     />
                   </p>
@@ -427,7 +498,7 @@ export default function Modal2() {
                   <button
                     className="bg-white text-white active:bg-blue-600 font-bold uppercase text-sm px-3 py-3 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button"
-                    onClick={() => setShowModal4(false)}
+                    onClick={() => alert("공유되었습니다.")}
                   >
                     <svg className="h-6 w-6 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -435,6 +506,7 @@ export default function Modal2() {
                       <polyline points="16 6 12 2 8 6" />
                       <line x1="12" y1="2" x2="12" y2="15" />
                     </svg>
+                    <p className="text-black">29</p>
                   </button>
                 </div>
               </div>
@@ -454,15 +526,15 @@ export default function Modal2() {
               <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                 {/*header*/}
                 <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
-                  <h3 className="text-2xl font-semibold">
-                    ###님
+                  <h3 className="text-1xl font-semibold">
+                    000님
                   </h3>
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   <h3 className="text-2xl font-semibold">
-                    --기업 지원 이력서5
+                    기아 지원 이력서
                   </h3>
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   &nbsp;&nbsp;&nbsp;&nbsp;
@@ -481,8 +553,8 @@ export default function Modal2() {
                 <div className="relative p-6 flex justify-center">
                   <p className="my-4 text-blueGray-500 text-lg leading-relaxed">
                     <img
-                      className="imgbox6"
-                      src="/temimg.png"
+                      className="modal01"
+                      src="img/temimg.png"
                       alt=""
                     />
                   </p>
@@ -492,7 +564,7 @@ export default function Modal2() {
                   <button
                     className="bg-white text-white active:bg-blue-600 font-bold uppercase text-sm px-3 py-3 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button"
-                    onClick={() => setShowModal5(false)}
+                    onClick={() => alert("공유되었습니다.")}
                   >
                     <svg className="h-6 w-6 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -500,6 +572,7 @@ export default function Modal2() {
                       <polyline points="16 6 12 2 8 6" />
                       <line x1="12" y1="2" x2="12" y2="15" />
                     </svg>
+                    <p className="text-black">25</p>
                   </button>
                 </div>
               </div>
@@ -520,14 +593,14 @@ export default function Modal2() {
                 {/*header*/}
                 <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
                   <h3 className="text-2xl font-semibold">
-                    ###님
+                    000님
                   </h3>
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   &nbsp;&nbsp;&nbsp;&nbsp;
-                  <h3 className="text-2xl font-semibold">
-                    --기업 지원 이력서6
+                  <h3 className="text-1xl font-semibold">
+                    한화 지원 이력서
                   </h3>
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   &nbsp;&nbsp;&nbsp;&nbsp;
@@ -546,8 +619,8 @@ export default function Modal2() {
                 <div className="relative p-6 flex justify-center">
                   <p className="my-4 text-blueGray-500 text-lg leading-relaxed">
                     <img
-                      className="imgbox6"
-                      src="/temimg.png"
+                      className="modal01"
+                      src="img/temimg.png"
                       alt=""
                     />
                   </p>
@@ -557,7 +630,7 @@ export default function Modal2() {
                   <button
                     className="bg-white text-white active:bg-blue-600 font-bold uppercase text-sm px-3 py-3 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button"
-                    onClick={() => setShowModal6(false)}
+                    onClick={() => alert("공유되었습니다.")}
                   >
                     <svg className="h-6 w-6 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -565,6 +638,7 @@ export default function Modal2() {
                       <polyline points="16 6 12 2 8 6" />
                       <line x1="12" y1="2" x2="12" y2="15" />
                     </svg>
+                    <p className="text-black">22</p>
                   </button>
                 </div>
               </div>
@@ -578,3 +652,6 @@ export default function Modal2() {
 
 
 }
+
+
+
